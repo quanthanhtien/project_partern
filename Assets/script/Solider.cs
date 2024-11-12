@@ -1,12 +1,18 @@
+using System;
 using UnityEngine;
 
 public class Solider : MonoBehaviour
 {
     [SerializeField]
     public EquipmentFactory equipmentFactory;
-    
 
-    public void Attack() => equipmentFactory?.CreateWeapon();
+    void Start()
+    {
+        Attack();
+        Defend();
+    }
 
-    public void Defend() => equipmentFactory?.CreateShield();
+    public void Attack() => equipmentFactory?.CreateWeapon().Attack();
+
+    public void Defend() => equipmentFactory?.CreateShield().Defend();
 }

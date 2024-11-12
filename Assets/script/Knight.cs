@@ -5,22 +5,29 @@ using UnityEngine;
 public class Knight : MonoBehaviour
 {
     [SerializeField, Required]
-    WeaponFactory weaponFactory;
+    public EquipmentFactory equipmentFactory;
 
-    [SerializeField, Required]
-    ShieldFactory shieldFactory;
-    IWeapon weapon = IWeapon.CreateDefault();
-    IShield shield = IShield.CreateDefault();
-
+    [SerializeField, Required] SpellStrategy[] spells;
     void Start()
     {
-        weapon = weaponFactory.CreateWeapon();
-        shield = shieldFactory.CreateShield();
         Attack();
         Defend();
     }
 
-    public void Attack() => weapon?.Attack();
+    public void Attack() => equipmentFactory?.CreateWeapon().Attack();
 
-    public void Defend() => shield?.Defend();
+    public void Defend() => equipmentFactory?.CreateShield().Defend();
+    
+    void OnEnable()
+    {
+        HeatsUpDisplay.OnButtonPressed += CastSpell;
+    }
+    void OnDisable()
+    {
+        HeatsUpDisplay.OnButtonPressed -= CastSpell;
+    }
+    void CastSpell(int index)
+    {
+        spells[index].CastSpell(transform);
+    }
 }

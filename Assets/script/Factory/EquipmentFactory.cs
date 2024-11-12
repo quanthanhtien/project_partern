@@ -5,7 +5,7 @@ public class EquipmentFactory : ScriptableObject
 {
     public WeaponFactory weaponFactory;
     public ShieldFactory shieldFactory;
-
+    
     public IWeapon CreateWeapon()
     {
         return weaponFactory == null ? weaponFactory.CreateWeapon() : IWeapon.CreateDefault();
