@@ -6,8 +6,8 @@ using UnityEngine.UI;
 public class HeatsUpDisplay : MonoBehaviour
 {
     [SerializeField] private Button[] buttons;
-    public delegate void ButtonPrssedEvent(int index);
-    public static event ButtonPrssedEvent OnButtonPressed;
+    public delegate void ButtonPressedEvent(int index);
+    public static event ButtonPressedEvent OnButtonPressed;
 
     private void Awake()
     {
