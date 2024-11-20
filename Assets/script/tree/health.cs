@@ -3,12 +3,12 @@
 [CreateAssetMenu(fileName = "Health", menuName = "Attribute/Health/Health")]
 public class Health : AttributeStratagy
 {
-    public exp exp;
-    public level level;
-
+    public exp expHealth;
+    public level levelHealth;
+    public AttributeStratagy inputAttribute;
     public override IAttribute AddAttribute()
     {
-        return this;
+        return inputAttribute;
     }
 
     public override void CastSpell()
