@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace CardGame
+namespace script.Decorator
 {
     public abstract class CardDecorator : ICard
     {

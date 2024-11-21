@@ -1,5 +1,4 @@
-namespace CardGame
-{
+namespace script.Decorator {
     public class BattleCard : ICard
     {
         int value;

@@ -1,12 +1,11 @@
+using System;
 using System.Security.Cryptography.X509Certificates;
 
-namespace CardGame
+namespace script.Decorator
 {
     public interface ICard
     {
         public int Play();
     }
-
-    
 }  
 
