@@ -1,19 +1,26 @@
 using System;
+using Sirenix.OdinInspector;
 using UnityEngine;
 
 public class test1 : MonoBehaviour
 {
     private void Start()
     {
-        Player player = new Player();
         PlayerHealthBar playerHealthBar = new PlayerHealthBar();
         playerHealthBar.PlayerHealth();
     }
-    
+
+    [Button]
+    public void playerDamage()
+    {
+        Player.Damage();
+    }
+
     public class Player
     {
-        public event Action OnPlayerDamage;
-        public void Damage()
+        public static event Action OnPlayerDamage;
+
+        public static void Damage()
         {
             OnPlayerDamage?.Invoke();
             Debug.Log("Player Damaged1");
@@ -22,10 +29,9 @@ public class test1 : MonoBehaviour
 
     public class PlayerHealthBar
     {
-        public Player player;
         public void PlayerHealth()
         {
-            player.OnPlayerDamage += () => Debug.Log("Player Damaged");
+            Player.OnPlayerDamage += () => Debug.Log("Player Damaged");
         }
     }
 }

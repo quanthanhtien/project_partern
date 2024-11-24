@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2e6f3b8cfd0d4c388468239333f2ac29, type: 3}
   m_Name: DameCard
   m_EditorClassIdentifier: 
-  value: 0
-  type: 0
+  value: 100
+  type: 1

@@ -6,9 +6,10 @@ namespace script.Decorator
     {
         private void OnMouseDown()
         {
-            if (CardManager.Instance.SelectedCard != null)
+            if (CardManager.Instance.selectedCard != null)
             {
-                CardManager.Instance.SelectedCard.Card.Play();
+                CardManager.Instance.selectedCard.MoveTo(transform.position);
+                CardManager.Instance.selectedCard.Card.Play();
             }
         }
     }

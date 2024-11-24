@@ -6,50 +6,86 @@ namespace script.Decorator
     {
         protected ICard card;
         protected readonly int value;
-        protected CardDecorator(int value)
+
+        public CardDecorator(int value)
         {
             this.value = value;
         }
 
-        protected void Decorator(ICard card)
+        public void Decorate(ICard card)
         {
-            this.card = card;
+            if (ReferenceEquals(this, card))
+            {
+                Debug.LogWarning("Can not decorate card");
+                return;
+            }
+            if (this.card is CardDecorator decorator)
+            {
+                decorator.Decorate(card);
+            }
+            else
+            {
+                this.card = card;
+            }
         }
+
         public virtual int Play()
         {
-            Debug.Log("card decorator"+ value);
-            return card?.Play()+value?? value;
+            return card?.Play() + value ?? value;
         }
     }
 
     public class DameDecorator : CardDecorator
     {
-        public DameDecorator(int value) : base(value) {}
+        public DameDecorator(int value)
+            : base(value) { }
+
         public override int Play()
         {
             DamePlayer();
-            return card?.Play()??0;
+            return card?.Play() ?? 0;
         }
+
         public void DamePlayer()
         {
-            Debug.Log("Increase player dame" + value);
+            Debug.Log("Playing DameDecorator card with value" + value);
             // Increase player dame
         }
-        
     }
-    
+
     public class HealthDecorator : CardDecorator
     {
-        public HealthDecorator(int value) : base(value) {}
+        public HealthDecorator(int value)
+            : base(value) { }
+
         public override int Play()
         {
             HealthPlayer();
-            return card?.Play()??0;
+            return card?.Play() ?? 0;
         }
+
         public void HealthPlayer()
         {
             Debug.Log("Increase player health" + value);
             // Increase player health
+        }
+    }
+
+    public class ShieldDecorator : CardDecorator
+    {
+        public ShieldDecorator(int value)
+            : base(value) { }
+
+        public override int Play()
+        {
+            ShieldPlayer();
+            return card?.Play() ?? 0;
+        }
+
+        public void ShieldPlayer()
+        {
+            Debug.Log("Increase player shield" + value);
+            // Increase player shield
         }
     }
 }

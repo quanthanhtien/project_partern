@@ -1,22 +1,21 @@
-using Sirenix.OdinInspector;
 using UnityEngine;
 
 namespace script.Decorator
 {
-    [CreateAssetMenu(fileName = "New Card", menuName = "Cards/CardDefinition"), ]
+    [CreateAssetMenu(fileName = "New Card", menuName = "Cards/CardDefinition")]
     public class CardDefinition : ScriptableObject
     {
         public int value;
         public CardType type = CardType.Battle;
-        
     }
+
     public enum CardType
     {
         Battle,
         Damage,
-        Health
+        Health,
+        Shield,
     }
-    
 
     public static class CardFactory
     {
@@ -26,9 +25,9 @@ namespace script.Decorator
             {
                 CardType.Health => new HealthDecorator(cardDefinition.value),
                 CardType.Damage => new DameDecorator(cardDefinition.value),
-                _ => new BattleCard(cardDefinition.value)
+                CardType.Shield => new ShieldDecorator(cardDefinition.value),
+                _ => new BattleCard(cardDefinition.value),
             };
         }
-        
     }
 }

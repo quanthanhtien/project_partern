@@ -1,14 +1,26 @@
 using System;
+using UnityEngine;
 
 namespace script.Decorator
 {
     public class CardManager : Singleton<CardManager>
     {
-        public static CardManager Instance;
-        public CardController SelectedCard;
-        private void Awake()
+        public CardController selectedCard;
+
+        public void Decorate(CardController clickedCard)
         {
-            Instance = this;
+            if (selectedCard == clickedCard)
+                return;
+            if (selectedCard.Card is CardDecorator decorator)
+            {
+                decorator.Decorate(clickedCard.Card);
+                clickedCard.Card = decorator;
+                selectedCard.MoveToAndDestroy(clickedCard.transform.position);
+            }
+            else
+            {
+                Debug.LogWarning("can not decorate card");
+            }
         }
     }
 }
