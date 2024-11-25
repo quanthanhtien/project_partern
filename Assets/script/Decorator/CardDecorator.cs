@@ -88,4 +88,15 @@ namespace script.Decorator
             // Increase player shield
         }
     }
+    public class BaseDecorator : CardDecorator
+    {
+        public BaseDecorator(int value)
+            : base(value) { }
+
+        public override int Play()
+        {
+            Debug.Log("base value");
+            return card.Play();
+        }
+    }
 }

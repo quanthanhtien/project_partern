@@ -675,7 +675,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ease: 27
   duration: 0.5
-  canDefinition: {fileID: 11400000, guid: 8903fc15bf2804b49b8df4fa3d50ab13, type: 2}
+  canDefinition: {fileID: 11400000, guid: cd03dbd78e342f0418f357517f2f355a, type: 2}
 --- !u!64 &1808973588
 MeshCollider:
   m_ObjectHideFlags: 0

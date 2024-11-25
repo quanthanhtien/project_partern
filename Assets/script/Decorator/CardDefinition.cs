@@ -15,6 +15,7 @@ namespace script.Decorator
         Damage,
         Health,
         Shield,
+        Base,
     }
 
     public static class CardFactory
@@ -26,6 +27,7 @@ namespace script.Decorator
                 CardType.Health => new HealthDecorator(cardDefinition.value),
                 CardType.Damage => new DameDecorator(cardDefinition.value),
                 CardType.Shield => new ShieldDecorator(cardDefinition.value),
+                CardType.Base => new BaseDecorator(cardDefinition.value),
                 _ => new BattleCard(cardDefinition.value),
             };
         }
