@@ -15,7 +15,7 @@ public class AnimationManager : MonoBehaviour
     }
     public float Jump()
     {
-        Debug.Log("Jump");
+        Debug.Log("Jump"); 
         return 1.0f;
     }
 
