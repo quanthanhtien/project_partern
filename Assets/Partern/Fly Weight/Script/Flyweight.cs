@@ -1,22 +1,12 @@
+using System;
 using UnityEngine;
+using UnityEditor;
 
-public class Flyweight :MonoBehaviour
+namespace FlyWeight
 {
-    public FlyweightSetting settings;
-}
-public abstract class FlyweightSetting : ScriptableObject
-{
-    public GameObject prefab;
-    public float despawnDelay;
-    public float speed;
-    
-    public Flyweight CreateFlyweight()
+    public class Flyweight : MonoBehaviour
     {
-        var go = Instantiate(prefab);
-        go.SetActive(false);
-        go.name = prefab.name;
-        var flyweight = go.AddComponent<Flyweight>();
-        flyweight.settings = this;
-        return flyweight;
+        public FlyweightSetting settings;
+
     }
 }
