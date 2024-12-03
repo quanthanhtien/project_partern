@@ -19,7 +19,7 @@ public class CommandManager :SerializedMonoBehaviour
         {
             HeroCommand.create<HeroCommand.AttackCommand>(Entity),
             HeroCommand.create<HeroCommand.SpinCommand>(Entity),
-            HeroCommand.create<HeroCommand.jumpCommand>(Entity)
+            HeroCommand.create<HeroCommand.JumpCommand>(Entity)
         };
     }
 

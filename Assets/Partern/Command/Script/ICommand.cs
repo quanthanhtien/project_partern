@@ -44,9 +44,9 @@ public abstract class HeroCommand : ICommand
             hero.Spin();
         }
     }
-    public class jumpCommand : HeroCommand
+    public class JumpCommand : HeroCommand
     {
-        public jumpCommand(IEntity hero) : base(hero)
+        public JumpCommand(IEntity hero) : base(hero)
         {
         }
 
