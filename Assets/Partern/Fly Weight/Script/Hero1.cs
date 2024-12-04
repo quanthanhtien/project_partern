@@ -5,7 +5,7 @@ using System.Collections.Generic;
 using UnityEngine.Serialization;
 
 public class Hero1 : MonoBehaviour
-{
+{   
     public List<ProjectileSettings> projectiles;
 
     private void Update()

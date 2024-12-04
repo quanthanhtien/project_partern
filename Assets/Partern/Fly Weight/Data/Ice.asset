@@ -12,10 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 11c9da82c4f84ab78d40294e943e946d, type: 3}
   m_Name: Ice
   m_EditorClassIdentifier: 
-  type: 0
+  type: 1
   prefab: {fileID: 5709550976808061431, guid: 9dc3fc857b16e4547acb6ceb2c86ebd8, type: 3}
-  despawnDelay: 0
-  speed: 0
   despawnDelay: 5
   speed: 5
   damage: 10

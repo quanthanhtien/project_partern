@@ -6,7 +6,6 @@ namespace FlyWeight
     {
         public FlyweightType type;
         public GameObject prefab;
-
         public virtual Flyweight CreateFlyweight()
         {
             var go = Instantiate(prefab);
