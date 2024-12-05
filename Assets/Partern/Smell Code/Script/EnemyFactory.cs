@@ -9,12 +9,10 @@ namespace Smell
     {
         public Enemy Create(EnemyConfig config)
         {
-            {
-                GameObject enemy = Object.Instantiate(config.Prefab);
-                Enemy enemyComponent = enemy.GetComponent<Enemy>();
-                enemyComponent.Initialize(config);
-                return enemyComponent;
-            }
+            GameObject enemy = Object.Instantiate(config.Prefab);
+            Enemy enemyComponent = enemy.GetComponent<Enemy>();
+            enemyComponent.Initialize(config);
+            return enemyComponent;
         }
     }
 }

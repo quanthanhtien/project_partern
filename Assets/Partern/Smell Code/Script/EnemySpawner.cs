@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using Sirenix.OdinInspector;
 using UnityEngine;
 
 namespace Smell
@@ -7,7 +8,10 @@ namespace Smell
     {
         public int maxEnemies = 10;
         public List<EnemyConfig> enemyConfigs;
-        EnemyFactory enemyFactory = new EnemyFactory();
+        EnemyFactory enemyFactory = new();
+
+        [Required]
+        public PlacementStrategy placementStrategy;
 
         private void Start()
         {
@@ -16,16 +20,11 @@ namespace Smell
 
         public void SpawnEnemy()
         {
-            for (int i = 0; i < 10; i++)
+            for (int i = 0; i < maxEnemies; i++)
             {
                 Enemy enemy = enemyFactory.Create(enemyConfigs[i % enemyConfigs.Count]);
-                enemy.transform.position = new Vector3(i * 2.0f, 0, 0);
+                enemy.transform.position = placementStrategy.SetPosition(transform.position);
             }
         }
-    }
-
-    public abstract class PlacementStrategy
-    {
-        public abstract void SetPosition(Enemy enemy, int index);
     }
 }

@@ -219,6 +219,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 725648262}
+  - component: {fileID: 725648263}
   m_Layer: 0
   m_Name: GameObject
   m_TagString: Untagged
@@ -241,6 +242,22 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &725648263
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 725648261}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cdee48084e874501bce4c35f2109337b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxEnemies: 10
+  enemyConfigs:
+  - {fileID: 11400000, guid: 4eb967b14ac678448a63ba5822d5a1a1, type: 2}
+  placementStrategy: {fileID: 11400000, guid: 5dc2403d049a88a4f8d2611d35ad26cb, type: 2}
 --- !u!1 &1699829977
 GameObject:
   m_ObjectHideFlags: 0
