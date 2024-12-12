@@ -1,4 +1,5 @@
 using System;
+using System.Reflection;
 using UnityEngine;
 
 namespace Visitor
@@ -9,16 +10,37 @@ namespace Visitor
         public int HealthBonus;
         public int ManaBonus;
 
-        public void Visit(HealthComponent healthComponent)
+        public void Visit(object o)
         {
-            healthComponent.AddHealth(HealthBonus);
-            Debug.Log("PowerUp.Visit(HealthComponent)");
+            MethodInfo visitMethod = GetType().GetMethod("Visit", new[] { o.GetType() });
+            if (
+                visitMethod != null
+                && visitMethod != GetType().GetMethod("Visit", new[] { typeof(object) })
+            )
+            {
+                visitMethod.Invoke(this, new[] { o });
+            }
+            else
+            {
+                DefaultVisit(o);
+            }
         }
 
-        public void Visit(ManaComponent manaComponent)
+        void DefaultVisit(object o)
         {
-            manaComponent.AddMana(ManaBonus);
-            Debug.Log("PowerUp.Visit(ManaComponent)");
+            Debug.Log("PowerUp.DefaultVisit");
         }
+
+        // public void Visit(HealthComponent healthComponent)
+        // {
+        //     healthComponent.AddHealth(HealthBonus);
+        //     Debug.Log("PowerUp.Visit(HealthComponent)");
+        // }
+
+        // public void Visit(ManaComponent manaComponent)
+        // {
+        //     manaComponent.AddMana(ManaBonus);
+        //     Debug.Log("PowerUp.Visit(ManaComponent)");
+        // }
     }
 }
