@@ -9,12 +9,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b808bee30777475cb70f8fc778c5f274, type: 3}
-  m_Name: Sword
+  m_Script: {fileID: 11500000, guid: a6ba6307eb9046069e28f7cfe8dc8232, type: 3}
+  m_Name: HealthPowerUp
   m_EditorClassIdentifier: 
-  weaponName: Starts Sword
-  damage: 10
-  weaponType: 0
-  range: 0
-  prefabs: {fileID: 7830717441520199194, guid: af4333803be2c0f48afd3ab7a73333af, type: 3}
-  icon: {fileID: 0}
+  HealthBonus: 100
+  ManaBonus: 0

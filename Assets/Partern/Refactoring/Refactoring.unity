@@ -42,7 +42,8 @@ RenderSettings:
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
-  serializedVersion: 12
+  serializedVersion: 13
+  m_BakeOnSceneLoad: 0
   m_GISettings:
     serializedVersion: 2
     m_BounceScale: 1
@@ -213,6 +214,7 @@ MonoBehaviour:
   weaponConfigs:
   - {fileID: 11400000, guid: 1dd2afcbbae54824ea5ad160bda17a5b, type: 2}
   - {fileID: 11400000, guid: 71a678750723d2f40ace6a4073f646bc, type: 2}
+  - {fileID: 0}
 --- !u!114 &28122927
 MonoBehaviour:
   m_ObjectHideFlags: 0
