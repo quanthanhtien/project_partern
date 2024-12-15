@@ -28,19 +28,23 @@ namespace ServiceLocator
 
         protected abstract void Bootstrap();
 
-        [AddComponentMenu("ServiceLocator/ServiceLocator Global")]
-        public class ServiceLocatorGlobalBootstrapper : Boostrapper
-        {
-            [SerializeField]
-            bool dontDestroyOnload = true;
+        
+    }
+    [AddComponentMenu("ServiceLocator/ServiceLocator Global")]
+    public class ServiceLocatorGlobalBootstrapper : Boostrapper
+    {
+        [SerializeField]
+        bool dontDestroyOnload = true;
 
-            protected override void Bootstrap() { }
-        }
-
-        [AddComponentMenu("ServiceLocator/ServiceLocator Scene")]
-        public class ServiceLocatorSceneBootstrapper : Boostrapper
+        protected override void Bootstrap()
         {
-            protected override void Bootstrap() { }
+            Container.ConfigureAsGlobal(dontDestroyOnload);
         }
+    }
+
+    [AddComponentMenu("ServiceLocator/ServiceLocator Scene")]
+    public class ServiceLocatorSceneBootstrapper : Boostrapper
+    {
+        protected override void Bootstrap() { }
     }
 }
