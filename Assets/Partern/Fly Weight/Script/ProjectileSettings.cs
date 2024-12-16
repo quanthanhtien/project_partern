@@ -18,6 +18,8 @@ namespace FlyWeight
             flyweight.settings = this;
             return flyweight;
         }
-       
+        public override void OnGet(Flyweight f) => f.gameObject.SetActive(true);
+        public override void OnRelease(Flyweight f) => f.gameObject.SetActive(false);
+        public override void OnDestroyPoolObject(Flyweight f) => Destroy(f.gameObject);
     }
 }

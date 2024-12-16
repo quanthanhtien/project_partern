@@ -9,11 +9,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 11c9da82c4f84ab78d40294e943e946d, type: 3}
-  m_Name: Ice
+  m_Script: {fileID: 11500000, guid: 2acea71fca604d87b4eddfda2c723a45, type: 3}
+  m_Name: RandomCirclePlacer
   m_EditorClassIdentifier: 
-  type: 1
-  prefab: {fileID: 5709550976808061431, guid: 9dc3fc857b16e4547acb6ceb2c86ebd8, type: 3}
-  despawnDelay: 5
-  speed: 5
-  damage: 10
+  minDistance: 2
+  maxDistance: 10
