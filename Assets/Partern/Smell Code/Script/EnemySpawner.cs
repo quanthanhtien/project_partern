@@ -4,6 +4,7 @@ using UnityEngine;
 
 namespace Smell
 {
+    
     public class EnemySpawner : MonoBehaviour
     {
         public int maxEnemies = 10;
