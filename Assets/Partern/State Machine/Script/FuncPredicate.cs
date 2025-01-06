@@ -2,11 +2,11 @@ using System;
 
 namespace Platformer
 {
-    public class Predicate
+    public class FuncPredicate :IPredicate
     {
         readonly Func<bool> func;
 
-        public Predicate(Func<bool> func)
+        public FuncPredicate(Func<bool> func)
         {
             this.func = func;
         }

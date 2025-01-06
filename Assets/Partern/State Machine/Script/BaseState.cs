@@ -7,8 +7,8 @@ namespace Platformer
         protected readonly PlayerController player;
         protected readonly Animator animator;
         
-        protected static readonly int locomotion = Animator.StringToHash("locomotion");
-        protected static readonly int jump = Animator.StringToHash("jump");
+        protected static readonly int LocomotionHash = Animator.StringToHash("locomotion");
+        protected static readonly int JumpHash = Animator.StringToHash("jump");
         
         protected const float crossFadeDuration = 0.1f;
         
@@ -19,8 +19,12 @@ namespace Platformer
         }
         
         public virtual void OnEnter() { }
-        public virtual void OnUpdate() { }
-        public virtual void OnFixedUpdate() { }
-        public virtual void OnExit() { }
+        public virtual void Update() { }
+        public virtual void FixedUpdate() { }
+
+        public virtual void OnExit()
+        {
+            Debug.Log("BaseState.OnExit");
+        }
     }
 }
