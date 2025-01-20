@@ -6,7 +6,7 @@ using Animancer.Units;
 using UnityEngine;
 
 namespace Animancer.Examples.Layers
-{
+{ 
     /// <summary>Demonstrates how to use layers to play multiple animations at once on different body parts.</summary>
     /// <example><see href="https://kybernetik.com.au/animancer/docs/examples/layers">Layers</see></example>
     /// https://kybernetik.com.au/animancer/api/Animancer.Examples.Layers/LayerExample
