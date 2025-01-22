@@ -1,10 +1,11 @@
 using System;
-using UnityEngine;
 using TMPro;
+using UnityEngine;
+
 public class ScoreManager : MonoBehaviour
 {
     TMP_Text scoreText;
-    
+
     int currentScore;
 
     private void Awake()
@@ -31,13 +32,14 @@ public class ScoreManager : MonoBehaviour
         scoreText.text = currentScore.ToString();
         UpdateScoreText();
     }
-    
+
     void SubScore(int points)
     {
         currentScore -= points;
         scoreText.text = currentScore.ToString();
         UpdateScoreText();
     }
+
     void UpdateScoreText()
     {
         scoreText.text = $"Score: {currentScore}";
