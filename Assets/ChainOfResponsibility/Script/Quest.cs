@@ -5,20 +5,21 @@ namespace COR
         public SerializableGUID Id;
         public string Name;
         public QuestState State = QuestState.NotStarted;
+        public QuestEvent Event;
     }
-    
+
     public enum QuestState
     {
         NotStarted,
         InProgress,
         Completed,
-        Failed
+        Failed,
     }
-    
+
     public enum QuestEvent
     {
         Start,
         Complete,
-        Fail
+        Fail,
     }
 }

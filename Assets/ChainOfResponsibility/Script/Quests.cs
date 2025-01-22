@@ -1,6 +1,7 @@
-using UnityEngine;
 using System;
 using System.Collections.Generic;
+using UnityEngine;
+
 namespace COR
 {
     public interface IQuestProcessor
@@ -8,30 +9,38 @@ namespace COR
         IQuestProcessor SetNext(IQuestProcessor processor);
         void Process(QuestMessageBase message, Dictionary<SerializableGUID, Quest> quests);
     }
-    
+
     public abstract class QuestProcessorBase : IQuestProcessor
     {
         private IQuestProcessor next;
+
         public IQuestProcessor SetNext(IQuestProcessor processor) => next = processor;
-        public virtual void Process(QuestMessageBase message, Dictionary<SerializableGUID, Quest> quests)
+
+        public virtual void Process(
+            QuestMessageBase message,
+            Dictionary<SerializableGUID, Quest> quests
+        )
         {
             next?.Process(message, quests);
         }
     }
-    
-    public class GenericQuestProcessor<TMessage> : QuestProcessorBase where TMessage : QuestMessageBase
-    {
-        
-    }
-    
+
+    public class GenericQuestProcessor<TMessage> : QuestProcessorBase
+        where TMessage : QuestMessageBase { }
+
     public class FailQuestProcessor : QuestProcessorBase
     {
-        public override void Process(QuestMessageBase message, Dictionary<SerializableGUID, Quest> quests)
+        public override void Process(
+            QuestMessageBase message,
+            Dictionary<SerializableGUID, Quest> quests
+        )
         {
             Debug.Log($"{GetType().Name}: Processing message of type{message.GetType().Name}");
 
-            if (message is FailQuestMessage failMessage &&
-                quests.TryGetValue(failMessage.QuestId, out var quest))
+            if (
+                message is FailQuestMessage failMessage
+                && quests.TryGetValue(failMessage.QuestId, out var quest)
+            )
             {
                 if (quest.State == QuestState.InProgress)
                 {
@@ -40,19 +49,24 @@ namespace COR
                 }
                 return;
             }
-            
+
             base.Process(message, quests);
         }
     }
-    
+
     public class CompleteQuestProcessor : QuestProcessorBase
     {
-        public override void Process(QuestMessageBase message, Dictionary<SerializableGUID, Quest> quests)
+        public override void Process(
+            QuestMessageBase message,
+            Dictionary<SerializableGUID, Quest> quests
+        )
         {
             Debug.Log($"{GetType().Name}: Processing message of type{GetType().Name}");
 
-            if (message is CompleteQuestMessage completeMessage &&
-                quests.TryGetValue(completeMessage.QuestId, out var quest))
+            if (
+                message is CompleteQuestMessage completeMessage
+                && quests.TryGetValue(completeMessage.QuestId, out var quest)
+            )
             {
                 if (quest.State == QuestState.InProgress)
                 {
@@ -64,15 +78,20 @@ namespace COR
             base.Process(message, quests);
         }
     }
-    
+
     public class StartQuestProcessor : QuestProcessorBase
     {
-        public override void Process(QuestMessageBase message, Dictionary<SerializableGUID, Quest> quests)
+        public override void Process(
+            QuestMessageBase message,
+            Dictionary<SerializableGUID, Quest> quests
+        )
         {
             Debug.Log($"{GetType().Name}: Processing message of type{message.GetType().Name}");
 
-            if (message is StartQuestMessage startMessage &&
-                quests.TryGetValue(startMessage.QuestId, out var quest))
+            if (
+                message is StartQuestMessage startMessage
+                && quests.TryGetValue(startMessage.QuestId, out var quest)
+            )
             {
                 if (quest.State == QuestState.NotStarted)
                 {
@@ -84,26 +103,28 @@ namespace COR
             base.Process(message, quests);
         }
     }
-    
+
     public abstract class QuestMessageBase
     {
         public SerializableGUID QuestId;
     }
-    
-    public class StartQuestMessage : QuestMessageBase
-    {
-    }
-    public class CompleteQuestMessage : QuestMessageBase
-    {
-    }
-    public class FailQuestMessage : QuestMessageBase
-    {
-    }
+
+    public class StartQuestMessage : QuestMessageBase { }
+
+    public class CompleteQuestMessage : QuestMessageBase { }
+
+    public class FailQuestMessage : QuestMessageBase { }
 }
+
 [Serializable]
-public struct SerializableGUID
+public class SerializableGUID
 {
-    public string guidString;
+    public string guidString { get; set; }
+
+    public SerializableGUID()
+    {
+        this.guidString = Guid.NewGuid().ToString();
+    }
 
     public SerializableGUID(string guidString)
     {
