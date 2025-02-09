@@ -11,7 +11,7 @@ namespace Partern.Mediator.Script
         // AgentMotor motor;
         Mediator<Agent> mediator;
 
-        // public AgentStatus Status { get; set; } = AgentStatus.Active;
+        public AgentStatus Status { get; set; } = AgentStatus.Active;
 
         private void Start()
         {
@@ -21,5 +21,11 @@ namespace Partern.Mediator.Script
         {
             visitor.Visit(this);
         }
+    }
+    
+    public enum AgentStatus
+    {
+        Active,
+        Inactive
     }
 }

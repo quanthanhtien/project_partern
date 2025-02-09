@@ -27,7 +27,7 @@ namespace COR
 
     public class GenericQuestProcessor<TMessage> : QuestProcessorBase
         where TMessage : QuestMessageBase { }
-
+    
     public class FailQuestProcessor : QuestProcessorBase
     {
         public override void Process(
@@ -111,7 +111,7 @@ namespace COR
 
     public class StartQuestMessage : QuestMessageBase { }
 
-    public class CompleteQuestMessage : QuestMessageBase { }
+    public class CompleteQuestMessage : QuestMessageBase { }    
 
     public class FailQuestMessage : QuestMessageBase { }
 }
