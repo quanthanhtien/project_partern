@@ -1,6 +1,6 @@
 using System;
 using UnityEngine;
-using ServiceLocator;
+using UnityServiceLocator;
 
 namespace Partern.Mediator.Script
 {
@@ -8,7 +8,7 @@ namespace Partern.Mediator.Script
     {
         private void Awake()
         {
-            ServiceLocator.ServiceLocator.Global.Register(this as Mediator<Agent>);
+            ServiceLocator.Global.Register(this as Mediator<Agent>);
         }
 
         protected override void OnDeregistered(Agent entity)
@@ -16,13 +16,13 @@ namespace Partern.Mediator.Script
             Debug.Log($"{entity.name} has been deregistered");
             Broadcast(entity, new MessagePayload { Source = entity, Content = "Registered" });
         }
-        
+
         protected override void OnRegistered(Agent entity)
         {
             Debug.Log($"{entity.name} has been registered");
             Broadcast(entity, new MessagePayload { Source = entity, Content = "Deregister" });
         }
-        
+
         protected override bool MediatorConditionMet(Agent target)
         {
             return target.Status == AgentStatus.Active;

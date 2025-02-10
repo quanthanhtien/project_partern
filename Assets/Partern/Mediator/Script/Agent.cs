@@ -1,6 +1,6 @@
 using System;
 using UnityEngine;
-using ServiceLocator;
+using UnityServiceLocator;
 
 // [RequireComponent(typeof(AgentMotor))]
 namespace Partern.Mediator.Script
@@ -13,19 +13,17 @@ namespace Partern.Mediator.Script
 
         public AgentStatus Status { get; set; } = AgentStatus.Active;
 
-        private void Start()
-        {
-        }
+        private void Start() { }
 
         public void Accept(IVisitor visitor)
         {
             visitor.Visit(this);
         }
     }
-    
+
     public enum AgentStatus
     {
         Active,
-        Inactive
+        Inactive,
     }
 }
