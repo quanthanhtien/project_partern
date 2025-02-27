@@ -1,0 +1,10 @@
+fileFormatVersion: 2
+guid: 344c97130ce744efa2bd583ce7a64667
+timeCreated: 1651857231
+AssetOrigin:
+  serializedVersion: 1
+  productId: 252687
+  packageName: Goap
+  packageVersion: 2.1.19
+  assetPath: Assets/CrashKonijn/GOAP/Demos/Simple/Sensors/Target/ClosestTreeSensor.cs
+  uploadId: 645858

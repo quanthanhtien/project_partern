@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: f3185c0fcf18bd241a121a233101bed6
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 11400000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 252687
+  packageName: Goap
+  packageVersion: 2.1.19
+  assetPath: Assets/CrashKonijn/GOAP/Demos/Simple/Configs/Goals/WanderGoalConfig.asset
+  uploadId: 645858

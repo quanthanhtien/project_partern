@@ -1,0 +1,10 @@
+fileFormatVersion: 2
+guid: f17c6b2c1ad14badbd688107ef4deef3
+timeCreated: 1651503588
+AssetOrigin:
+  serializedVersion: 1
+  productId: 252687
+  packageName: Goap
+  packageVersion: 2.1.19
+  assetPath: Assets/CrashKonijn/GOAP/Demos/Shared/Behaviours/AgentMoveBehaviour.cs
+  uploadId: 645858

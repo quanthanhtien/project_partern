@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: b40fb0aad36b1a041b2348576ff721b7
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 11400000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 252687
+  packageName: Goap
+  packageVersion: 2.1.19
+  assetPath: Assets/CrashKonijn/GOAP/Demos/Simple/Configs/Goals/FixHungerGoalConfig.asset
+  uploadId: 645858

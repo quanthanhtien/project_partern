@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: a0bdf39881cdaf84ca4b96e95314be87
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 9100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 252687
+  packageName: Goap
+  packageVersion: 2.1.19
+  assetPath: Assets/CrashKonijn/GOAP/Demos/Animations/00-creature-sheet-front_0.controller
+  uploadId: 645858

@@ -1,0 +1,10 @@
+fileFormatVersion: 2
+guid: 7b2226b041724ed9a97c39d168db4a0f
+timeCreated: 1651857639
+AssetOrigin:
+  serializedVersion: 1
+  productId: 252687
+  packageName: Goap
+  packageVersion: 2.1.19
+  assetPath: Assets/CrashKonijn/GOAP/Demos/Simple/Actions/PickupAppleAction.cs
+  uploadId: 645858

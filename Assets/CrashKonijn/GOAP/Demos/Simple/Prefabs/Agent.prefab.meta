@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: f2233afe6b5d3734dbb94bce7789238e
+PrefabImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 252687
+  packageName: Goap
+  packageVersion: 2.1.19
+  assetPath: Assets/CrashKonijn/GOAP/Demos/Simple/Prefabs/Agent.prefab
+  uploadId: 645858

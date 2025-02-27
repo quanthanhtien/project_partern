@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: e9a364b72b5a02d4b82c960463f8a028
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 11400000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 252687
+  packageName: Goap
+  packageVersion: 2.1.19
+  assetPath: Assets/CrashKonijn/GOAP/Demos/Simple/Configs/TargetSensors/ClosestTreeSensor.asset
+  uploadId: 645858

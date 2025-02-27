@@ -1,0 +1,10 @@
+fileFormatVersion: 2
+guid: 004fde275ed946039d2f1484a14bac33
+timeCreated: 1651600978
+AssetOrigin:
+  serializedVersion: 1
+  productId: 252687
+  packageName: Goap
+  packageVersion: 2.1.19
+  assetPath: Assets/CrashKonijn/GOAP/Demos/Simple/Behaviours/SimpleAgentBrain.cs
+  uploadId: 645858

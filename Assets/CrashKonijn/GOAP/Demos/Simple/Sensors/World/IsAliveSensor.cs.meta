@@ -1,0 +1,10 @@
+fileFormatVersion: 2
+guid: c6e7f7b2c23b4b8c965056b596952003
+timeCreated: 1651490480
+AssetOrigin:
+  serializedVersion: 1
+  productId: 252687
+  packageName: Goap
+  packageVersion: 2.1.19
+  assetPath: Assets/CrashKonijn/GOAP/Demos/Simple/Sensors/World/IsAliveSensor.cs
+  uploadId: 645858

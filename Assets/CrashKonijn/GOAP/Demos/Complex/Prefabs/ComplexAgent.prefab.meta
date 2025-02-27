@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: b0a92a1481ddfaa4a8fc3d5aaa458c33
+PrefabImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 252687
+  packageName: Goap
+  packageVersion: 2.1.19
+  assetPath: Assets/CrashKonijn/GOAP/Demos/Complex/Prefabs/ComplexAgent.prefab
+  uploadId: 645858

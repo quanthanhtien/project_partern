@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 225f125307d5a874d8bc597b07cf88b3
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 11400000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 252687
+  packageName: Goap
+  packageVersion: 2.1.19
+  assetPath: Assets/CrashKonijn/GOAP/Demos/Simple/Configs/TargetKey/ClosestApple.asset
+  uploadId: 645858

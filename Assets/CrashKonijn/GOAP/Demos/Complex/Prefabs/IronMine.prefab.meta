@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 6ba93035d6708ff4a910dc1f81f462e4
+PrefabImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 252687
+  packageName: Goap
+  packageVersion: 2.1.19
+  assetPath: Assets/CrashKonijn/GOAP/Demos/Complex/Prefabs/IronMine.prefab
+  uploadId: 645858

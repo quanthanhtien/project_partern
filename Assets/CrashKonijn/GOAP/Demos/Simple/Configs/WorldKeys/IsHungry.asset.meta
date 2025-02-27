@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 1b936068c70b82240b99a05d2be98745
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 11400000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 252687
+  packageName: Goap
+  packageVersion: 2.1.19
+  assetPath: Assets/CrashKonijn/GOAP/Demos/Simple/Configs/WorldKeys/IsHungry.asset
+  uploadId: 645858
