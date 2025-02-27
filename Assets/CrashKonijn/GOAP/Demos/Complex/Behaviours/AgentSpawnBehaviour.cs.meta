@@ -1,0 +1,10 @@
+﻿fileFormatVersion: 2
+guid: e35fcdb3a0414c73814658b8d7c95e50
+timeCreated: 1678985834
+AssetOrigin:
+  serializedVersion: 1
+  productId: 252687
+  packageName: Goap
+  packageVersion: 2.1.19
+  assetPath: Assets/CrashKonijn/GOAP/Demos/Complex/Behaviours/AgentSpawnBehaviour.cs
+  uploadId: 645858

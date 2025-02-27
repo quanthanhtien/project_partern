@@ -1,0 +1,10 @@
+fileFormatVersion: 2
+guid: ce2da26bbea24bbd9b249e9bacb6f483
+timeCreated: 1651599531
+AssetOrigin:
+  serializedVersion: 1
+  productId: 252687
+  packageName: Goap
+  packageVersion: 2.1.19
+  assetPath: Assets/CrashKonijn/GOAP/Demos/Shared/Goals/FixHungerGoal.cs
+  uploadId: 645858

@@ -1,0 +1,10 @@
+fileFormatVersion: 2
+guid: 8703d2578b9c47d197294b211824380c
+timeCreated: 1651481966
+AssetOrigin:
+  serializedVersion: 1
+  productId: 252687
+  packageName: Goap
+  packageVersion: 2.1.19
+  assetPath: Assets/CrashKonijn/GOAP/Demos/Shared/Actions/WanderAction.cs
+  uploadId: 645858

@@ -1,0 +1,10 @@
+fileFormatVersion: 2
+guid: 8b762856267b422eb107ede48b54de32
+timeCreated: 1651496152
+AssetOrigin:
+  serializedVersion: 1
+  productId: 252687
+  packageName: Goap
+  packageVersion: 2.1.19
+  assetPath: Assets/CrashKonijn/GOAP/Demos/Shared/Sensors/Target/WanderTargetSensor.cs
+  uploadId: 645858

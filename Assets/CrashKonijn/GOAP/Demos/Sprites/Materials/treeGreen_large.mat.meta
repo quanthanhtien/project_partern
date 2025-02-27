@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 3c8b9669c63d08c4c9e0ab5524c38daf
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 2100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 252687
+  packageName: Goap
+  packageVersion: 2.1.19
+  assetPath: Assets/CrashKonijn/GOAP/Demos/Sprites/Materials/treeGreen_large.mat
+  uploadId: 645858

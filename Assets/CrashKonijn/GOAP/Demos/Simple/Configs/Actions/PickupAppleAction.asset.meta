@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 0972539c19d955a438d6b3c030deb8e7
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 11400000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 252687
+  packageName: Goap
+  packageVersion: 2.1.19
+  assetPath: Assets/CrashKonijn/GOAP/Demos/Simple/Configs/Actions/PickupAppleAction.asset
+  uploadId: 645858

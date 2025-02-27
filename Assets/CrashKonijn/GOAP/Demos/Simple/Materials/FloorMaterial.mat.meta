@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: a2631a250535a124ab097fe702183ca1
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 2100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 252687
+  packageName: Goap
+  packageVersion: 2.1.19
+  assetPath: Assets/CrashKonijn/GOAP/Demos/Simple/Materials/FloorMaterial.mat
+  uploadId: 645858

@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: e15b856369b75754985bda812499b758
+PrefabImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 252687
+  packageName: Goap
+  packageVersion: 2.1.19
+  assetPath: Assets/CrashKonijn/GOAP/Demos/Complex/Prefabs/Anvil.prefab
+  uploadId: 645858

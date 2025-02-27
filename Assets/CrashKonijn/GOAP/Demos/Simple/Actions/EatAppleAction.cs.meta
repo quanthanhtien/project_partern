@@ -1,0 +1,10 @@
+fileFormatVersion: 2
+guid: f27acd4f287b434884cbdf46e38203c6
+timeCreated: 1651601908
+AssetOrigin:
+  serializedVersion: 1
+  productId: 252687
+  packageName: Goap
+  packageVersion: 2.1.19
+  assetPath: Assets/CrashKonijn/GOAP/Demos/Simple/Actions/EatAppleAction.cs
+  uploadId: 645858

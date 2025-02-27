@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 59d5b26a149e88a4ea08994ab801bcd4
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 11400000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 252687
+  packageName: Goap
+  packageVersion: 2.1.19
+  assetPath: Assets/CrashKonijn/GOAP/Demos/Simple/Configs/TargetKey/TransformTarget.asset
+  uploadId: 645858

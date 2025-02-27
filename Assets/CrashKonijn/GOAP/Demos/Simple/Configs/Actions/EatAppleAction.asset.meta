@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: a5ec52e35b7cd0b4088f9677cc010ed3
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 11400000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 252687
+  packageName: Goap
+  packageVersion: 2.1.19
+  assetPath: Assets/CrashKonijn/GOAP/Demos/Simple/Configs/Actions/EatAppleAction.asset
+  uploadId: 645858

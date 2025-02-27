@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 7d42444bc4dd1734fad0e940217b6957
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 11400000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 252687
+  packageName: Goap
+  packageVersion: 2.1.19
+  assetPath: Assets/CrashKonijn/GOAP/Demos/Simple/Configs/TargetKey/ClosestTree.asset
+  uploadId: 645858

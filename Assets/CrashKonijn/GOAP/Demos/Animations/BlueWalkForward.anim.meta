@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 548d94c6d61a8e94cb0a63937731d2a3
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 7400000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 252687
+  packageName: Goap
+  packageVersion: 2.1.19
+  assetPath: Assets/CrashKonijn/GOAP/Demos/Animations/BlueWalkForward.anim
+  uploadId: 645858

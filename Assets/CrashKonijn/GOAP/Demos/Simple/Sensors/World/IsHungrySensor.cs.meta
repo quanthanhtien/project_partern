@@ -1,0 +1,10 @@
+fileFormatVersion: 2
+guid: 52071c18d9de477384def0e48eda7185
+timeCreated: 1651490357
+AssetOrigin:
+  serializedVersion: 1
+  productId: 252687
+  packageName: Goap
+  packageVersion: 2.1.19
+  assetPath: Assets/CrashKonijn/GOAP/Demos/Simple/Sensors/World/IsHungrySensor.cs
+  uploadId: 645858

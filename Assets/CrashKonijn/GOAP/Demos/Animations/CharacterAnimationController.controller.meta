@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 6b5474218fde99a44ac01ae72b1d79ad
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 9100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 252687
+  packageName: Goap
+  packageVersion: 2.1.19
+  assetPath: Assets/CrashKonijn/GOAP/Demos/Animations/CharacterAnimationController.controller
+  uploadId: 645858

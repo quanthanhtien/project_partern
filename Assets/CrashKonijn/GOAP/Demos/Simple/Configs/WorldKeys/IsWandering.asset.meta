@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 413a272d7eab992448568e528f7839c6
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 11400000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 252687
+  packageName: Goap
+  packageVersion: 2.1.19
+  assetPath: Assets/CrashKonijn/GOAP/Demos/Simple/Configs/WorldKeys/IsWandering.asset
+  uploadId: 645858

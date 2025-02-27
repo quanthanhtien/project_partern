@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 9a0862183a4fb174bb8162ec5f4dca21
+PrefabImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 252687
+  packageName: Goap
+  packageVersion: 2.1.19
+  assetPath: Assets/CrashKonijn/GOAP/Demos/Complex/Prefabs/Items/Pickaxe.prefab
+  uploadId: 645858

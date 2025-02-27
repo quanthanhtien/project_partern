@@ -1,0 +1,10 @@
+fileFormatVersion: 2
+guid: 1bc69d02b77f4d1f9fcffd159b521e3c
+timeCreated: 1651858546
+AssetOrigin:
+  serializedVersion: 1
+  productId: 252687
+  packageName: Goap
+  packageVersion: 2.1.19
+  assetPath: Assets/CrashKonijn/GOAP/Demos/Shared/Sensors/Target/TransformSensor.cs
+  uploadId: 645858
