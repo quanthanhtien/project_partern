@@ -4,16 +4,16 @@ public class CactusAnimationController : AnimationController
 {
     protected override void SetLocomotionClip()
     {
-        locomotionClip = Animator.StringToHash("Locomotion");
+        locomotionClip = Animator.StringToHash("Idel");
     }
 
     protected override void SetAttackClip()
     {
-        attackClip = Animator.StringToHash("Cactus_Attack01");
+        attackClipDefault = Animator.StringToHash("Atack_3");
     }
 
     protected override void SetSpeedHash()
     {
-        speedHash = Animator.StringToHash("Speed");
+        speedHash = Animator.StringToHash("Run");
     }
 }
