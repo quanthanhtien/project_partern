@@ -14,14 +14,14 @@ public class Hero1 : MonoBehaviour
         {
             var flyweight = FlyweightFactory.Spawn(projectiles[0]);
             Debug.Log("Projectile 1");
-            flyweight.transform.position += new Vector3(-1f,1f,-1f);
+            flyweight.transform.position = transform.position;
             flyweight.transform.rotation = transform.rotation;
         }
         if (Input.GetMouseButtonDown(0))
         {
             var flyweight = FlyweightFactory.Spawn(projectiles[1]);
             Debug.Log("Projectile 2");
-            flyweight.transform.position += new Vector3(-1f,1f,-1f);
+            flyweight.transform.position = transform.position;
             flyweight.transform.rotation = transform.rotation;
         }
     }

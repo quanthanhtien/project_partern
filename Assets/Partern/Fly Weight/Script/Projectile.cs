@@ -10,6 +10,7 @@ namespace FlyWeight
         public void OnEnable()
         {
             StartCoroutine(DespawnAfterDelay(settings.despawnDelay));
+            transform.position = Vector3.zero;
         }
 
         private void Update()
