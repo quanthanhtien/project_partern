@@ -68,6 +68,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   detectionRadius: 6.37
   timerInterval: 1
+  gizmoColor: {r: 0, g: 1, b: 0, a: 1}
 --- !u!1 &4643752743810215388
 GameObject:
   m_ObjectHideFlags: 0
@@ -134,8 +135,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 43c0c3d9327d431dba6a170a2f8a0a26, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  detectionRadius: 15.54
+  detectionRadius: 12.39
   timerInterval: 1
+  gizmoColor: {r: 0.998271, g: 0, b: 1, a: 1}
 --- !u!1 &6508372652212563006
 GameObject:
   m_ObjectHideFlags: 0
@@ -266,6 +268,7 @@ Transform:
   - {fileID: 7027739419296200299}
   - {fileID: 6964885961486376766}
   - {fileID: 7233782872824156073}
+  - {fileID: 4401723853340052635}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!54 &4139205028522718349
@@ -331,7 +334,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   chaseSensor: {fileID: 3451174691572517429}
   attackSensor: {fileID: 5267665343402631029}
+  Skill1Sensor: {fileID: 4369356023754168188}
+  Skill2Sensor: {fileID: 0}
+  spider_silk: {fileID: 1536594620327803767, guid: 463a1d705cd560b418fdb4603671cf55, type: 3}
   restingPosition: {fileID: 0}
+  doorOnePosition: {fileID: 0}
+  doorTwoPosition: {fileID: 0}
   health: 100
   stamina: 100
 --- !u!114 &3243467166776875751
@@ -349,6 +357,7 @@ MonoBehaviour:
   locomotionClip: -2089788878
   speedHash: -823668238
   attackClipDefault: 1080829965
+  attackClip1: 1080829965
 --- !u!135 &5187608091361091849
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -370,6 +379,75 @@ SphereCollider:
   serializedVersion: 3
   m_Radius: 1.35
   m_Center: {x: 0, y: 0.49, z: 0}
+--- !u!1 &9137540307880100072
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4401723853340052635}
+  - component: {fileID: 8320460484884872893}
+  - component: {fileID: 4369356023754168188}
+  m_Layer: 0
+  m_Name: Skill1Sensor
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4401723853340052635
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9137540307880100072}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 6157874087670571484}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!135 &8320460484884872893
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9137540307880100072}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Radius: 0.5
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &4369356023754168188
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9137540307880100072}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 43c0c3d9327d431dba6a170a2f8a0a26, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  detectionRadius: 18.9
+  timerInterval: 1
+  gizmoColor: {r: 1, g: 0.9445204, b: 0, a: 1}
 --- !u!1001 &7353589537044795776
 PrefabInstance:
   m_ObjectHideFlags: 0

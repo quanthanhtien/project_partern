@@ -10,6 +10,8 @@ public class Sensor : MonoBehaviour
     [SerializeField]
     float timerInterval = 1f;
 
+    public Color gizmoColor = Color.green;
+    
     SphereCollider detectionRange;
 
     public event Action OnTargetChanged = delegate { };
@@ -73,7 +75,7 @@ public class Sensor : MonoBehaviour
 
     void OnDrawGizmos()
     {
-        Gizmos.color = IsTargetInRange ? Color.red : Color.green;
+        Gizmos.color = IsTargetInRange ? Color.red : gizmoColor;
         Gizmos.DrawWireSphere(transform.position, detectionRadius);
     }
 }

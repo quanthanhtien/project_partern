@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using Animancer;
-using DependencyInjection; // https://github.com/adammyhre/Unity-Dependency-Injection-Lite
+using DependencyInjection; 
 using UnityEngine;
 using UnityEngine.AI;
 
@@ -16,6 +16,16 @@ public class GoapAgent : MonoBehaviour
     [SerializeField]
     Sensor attackSensor;
 
+    [SerializeField]
+    Sensor Skill1Sensor;
+    [SerializeField]
+    Sensor Skill2Sensor;
+    
+    [SerializeField]
+    GameObject spider_silk;
+    [SerializeField]
+    GameObject spider_spoison;
+    
     [Header("Known Locations")]
     [SerializeField]
     Transform restingPosition;
@@ -23,11 +33,11 @@ public class GoapAgent : MonoBehaviour
     // [SerializeField]
     // Transform foodShack;
     //
-    // [SerializeField]
-    // Transform doorOnePosition;
+    [SerializeField]
+    Transform doorOnePosition;
     //
-    // [SerializeField]
-    // Transform doorTwoPosition;
+    [SerializeField]
+    Transform doorTwoPosition;
 
     NavMeshAgent navMeshAgent;
     AnimationController animations;
@@ -83,18 +93,24 @@ public class GoapAgent : MonoBehaviour
         factory.AddBelief("AgentIdle", () => !navMeshAgent.hasPath);
         factory.AddBelief("AgentMoving", () => navMeshAgent.hasPath);
         factory.AddBelief("AgentHealthLow", () => health < 30);
-        factory.AddBelief("AgentIsHealthy", () => health >= 50);
+        factory.AddBelief("AgentIsHealthy", () => health >= 70);
         factory.AddBelief("AgentStaminaLow", () => stamina < 10);
         factory.AddBelief("AgentIsRested", () => stamina >= 50);
-
-        // factory.AddLocationBelief("AgentAtDoorOne", 3f, doorOnePosition);
-        // factory.AddLocationBelief("AgentAtDoorTwo", 3f, doorTwoPosition);
+        factory.AddBelief("AgentIsHealthMedium", () => health < 70 && health > 50);
+        
+        
+        factory.AddLocationBelief("AgentAtDoorOne", 3f, doorOnePosition);
+        factory.AddLocationBelief("AgentAtDoorTwo", 3f, doorTwoPosition);
         factory.AddLocationBelief("AgentAtRestingPosition", 3f, restingPosition);
         // factory.AddLocationBelief("AgentAtFoodShack", 3f, foodShack);
 
         factory.AddSensorBelief("PlayerInChaseRange", chaseSensor);
         factory.AddSensorBelief("PlayerInAttackRange", attackSensor);
         factory.AddBelief("AttackingPlayer", () => false); // Player can always be attacked, this will never become true
+        factory.AddSensorBelief("RangeBossUseSkill1", Skill1Sensor);
+        factory.AddBelief("AttackingPlayerBySkill1", () => false);
+        factory.AddSensorBelief("RangeBossUseSkill2", Skill2Sensor);
+        factory.AddBelief("AttackingPlayerBySkill2", () => false);
     }
 
     void SetupActions()
@@ -103,14 +119,14 @@ public class GoapAgent : MonoBehaviour
 
         actions.Add(
             new AgentAction.Builder("Relax")
-                .WithStrategy(new IdleStrategy(5))
+                .WithStrategy(new IdleStrategy(5,animations))
                 .AddEffect(beliefs["Nothing"])
                 .Build()
         );
 
         actions.Add(
             new AgentAction.Builder("Wander Around")
-                .WithStrategy(new WanderStrategy(navMeshAgent, 10))
+                .WithStrategy(new WanderStrategy(navMeshAgent, 10, animations))
                 .AddEffect(beliefs["AgentMoving"])
                 .Build()
         );
@@ -128,40 +144,40 @@ public class GoapAgent : MonoBehaviour
         //         .Build()
         // );
 
-        // actions.Add(
-        //     new AgentAction.Builder("MoveToDoorOne")
-        //         .WithStrategy(new MoveStrategy(navMeshAgent, () => doorOnePosition.position))
-        //         .AddEffect(beliefs["AgentAtDoorOne"])
-        //         .Build()
-        // );
+        actions.Add(
+            new AgentAction.Builder("MoveToDoorOne")
+                .WithStrategy(new MoveStrategy(navMeshAgent, () => doorOnePosition.position,animations))
+                .AddEffect(beliefs["AgentAtDoorOne"])
+                .Build()
+        );
 
-        // actions.Add(
-        //     new AgentAction.Builder("MoveToDoorTwo")
-        //         .WithStrategy(new MoveStrategy(navMeshAgent, () => doorTwoPosition.position))
-        //         .AddEffect(beliefs["AgentAtDoorTwo"])
-        //         .Build()
-        // );
+        actions.Add(
+            new AgentAction.Builder("MoveToDoorTwo")
+                .WithStrategy(new MoveStrategy(navMeshAgent, () => doorTwoPosition.position,animations))
+                .AddEffect(beliefs["AgentAtDoorTwo"])
+                .Build()
+        );
 
-        // actions.Add(
-        //     new AgentAction.Builder("MoveFromDoorOneToRestArea")
-        //         .WithCost(2)
-        //         .WithStrategy(new MoveStrategy(navMeshAgent, () => restingPosition.position))
-        //         .AddPrecondition(beliefs["AgentAtDoorOne"])
-        //         .AddEffect(beliefs["AgentAtRestingPosition"])
-        //         .Build()
-        // );
+        actions.Add(
+            new AgentAction.Builder("MoveFromDoorOneToRestArea")
+                .WithCost(2)
+                .WithStrategy(new MoveStrategy(navMeshAgent, () => restingPosition.position,animations))
+                .AddPrecondition(beliefs["AgentAtDoorOne"])
+                .AddEffect(beliefs["AgentAtRestingPosition"])
+                .Build()
+        );
 
-        // actions.Add(
-        //     new AgentAction.Builder("MoveFromDoorTwoRestArea")
-        //         .WithStrategy(new MoveStrategy(navMeshAgent, () => restingPosition.position))
-        //         .AddPrecondition(beliefs["AgentAtDoorTwo"])
-        //         .AddEffect(beliefs["AgentAtRestingPosition"])
-        //         .Build()
-        // );
+        actions.Add(
+            new AgentAction.Builder("MoveFromDoorTwoRestArea")
+                .WithStrategy(new MoveStrategy(navMeshAgent, () => restingPosition.position,animations))
+                .AddPrecondition(beliefs["AgentAtDoorTwo"])
+                .AddEffect(beliefs["AgentAtRestingPosition"])
+                .Build()
+        );
 
         actions.Add(
             new AgentAction.Builder("Rest")
-                .WithStrategy(new IdleStrategy(5))
+                .WithStrategy(new IdleStrategy(5,animations))
                 .AddPrecondition(beliefs["AgentAtRestingPosition"])
                 .AddEffect(beliefs["AgentIsRested"])
                 .Build()
@@ -170,7 +186,7 @@ public class GoapAgent : MonoBehaviour
         actions.Add(
             new AgentAction.Builder("ChasePlayer")
                 .WithStrategy(
-                    new MoveStrategy(navMeshAgent, () => beliefs["PlayerInChaseRange"].Location)
+                    new MoveStrategy(navMeshAgent, () => beliefs["PlayerInChaseRange"].Location,animations)
                 )
                 .AddPrecondition(beliefs["PlayerInChaseRange"])
                 .AddEffect(beliefs["PlayerInAttackRange"])
@@ -181,7 +197,26 @@ public class GoapAgent : MonoBehaviour
             new AgentAction.Builder("AttackPlayer")
                 .WithStrategy(new AttackStrategyDefault(animations, attackSensor))
                 .AddPrecondition(beliefs["PlayerInAttackRange"])
+                .AddPrecondition(beliefs["AgentIsHealthy"])
                 .AddEffect(beliefs["AttackingPlayer"])
+                .Build()
+        );
+        
+        actions.Add(
+            new AgentAction.Builder("UseSkill1_Spider_Silk")
+                .WithStrategy(new AttackStrategy1(animations, Skill1Sensor, spider_silk, navMeshAgent))
+                .AddPrecondition(beliefs["RangeBossUseSkill1"])
+                .AddPrecondition(beliefs["AgentIsHealthMedium"])
+                .AddEffect(beliefs["AttackingPlayerBySkill1"])
+                .Build()
+        );
+        
+        actions.Add(
+            new AgentAction.Builder("UseSkill1_Spider_poison")
+                .WithStrategy(new AttackStrategy2(animations, Skill2Sensor, spider_spoison, navMeshAgent))
+                .AddPrecondition(beliefs["RangeBossUseSkill2"])
+                .AddPrecondition(beliefs["AgentHealthLow"])
+                .AddEffect(beliefs["AttackingPlayerBySkill2"])
                 .Build()
         );
     }
@@ -224,6 +259,20 @@ public class GoapAgent : MonoBehaviour
                 .WithDesiredEffect(beliefs["AttackingPlayer"])
                 .Build()
         );
+        
+        goals.Add(
+            new AgentGoal.Builder("ChangeSkillAttack1")
+                .WithPriority(3)
+                .WithDesiredEffect(beliefs["AttackingPlayerBySkill1"])
+                .Build()
+        );
+        
+        goals.Add(
+            new AgentGoal.Builder("ChangeSkillAttack2")
+                .WithPriority(3)
+                .WithDesiredEffect(beliefs["AttackingPlayerBySkill2"])
+                .Build()
+        );
     }
 
     void SetupTimers()
@@ -263,7 +312,7 @@ public class GoapAgent : MonoBehaviour
     void Update()
     {
         statsTimer.Tick(Time.deltaTime);
-        animations.SetSpeed(navMeshAgent.velocity.magnitude, attackSensor);
+        // animations.SetSpeed(navMeshAgent.velocity.magnitude, attackSensor);
         // Update the plan and current action if there is one
         if (currentAction == null)
         {

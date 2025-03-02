@@ -5,8 +5,6 @@ using UnityEngine.Serialization;
 
 public abstract class AnimationController : MonoBehaviour
 {
-    const float k_crossfadeDuration = 0.1f;
-
     Animator animator;
     CountdownTimer timer;
 
@@ -23,7 +21,10 @@ public abstract class AnimationController : MonoBehaviour
     [FormerlySerializedAs("attackClip")]
     [HideInInspector]
     public int attackClipDefault = Animator.StringToHash("Attack");
-
+    [HideInInspector]
+    public int attackClip1 = Animator.StringToHash("Attack");
+    [HideInInspector]
+    public int attackClip2 = Animator.StringToHash("Attack");
     void Awake()
     {
         animator = GetComponentInChildren<Animator>();
@@ -32,21 +33,15 @@ public abstract class AnimationController : MonoBehaviour
         SetSpeedHash();
     }
 
-    public void SetSpeed(float speed, Sensor sensor)
+    public void AnimMove()
     {
-        if (sensor.IsTargetInRange == false)
-        {
-            if (speed != 0)
-            {
-                ChangeAnimation(speedHash);
-            }
-            else
-            {
-                ChangeAnimation(locomotionClip);
-            }
-        }
+        ChangeAnimation(speedHash);
     }
 
+    public void AnimIdle()
+    {
+        ChangeAnimation(locomotionClip);
+    }
     public void Attack(int choose)
     {
         switch (choose)
@@ -55,42 +50,15 @@ public abstract class AnimationController : MonoBehaviour
                 ChangeAnimation(attackClipDefault);
                 break;
             case 2:
-                ChangeAnimation(attackClipDefault);
+                ChangeAnimation(attackClip1);
+                break;
+            case 3:
+                ChangeAnimation(attackClip2);
                 break;
         }
     }
 
-    public void PlayAnimation2(int clipHash1, int clipHash2)
-    {
-        PlayAnimationUsingTimer(clipHash1, clipHash2);
-    }
-
     void Update() => timer?.Tick(Time.deltaTime);
-
-    void PlayAnimationUsingTimer(int clipHash, int clipHash2)
-    {
-        timer = new CountdownTimer(GetAnimationLength(clipHash));
-        timer.OnTimerStart += () => ChangeAnimation(clipHash);
-        timer.OnTimerStop += () => ChangeAnimation(locomotionClip);
-        timer.Start();
-    }
-
-    public float GetAnimationLength(int hash)
-    {
-        if (animationLength > 0)
-            return animationLength;
-
-        foreach (AnimationClip clip in animator.runtimeAnimatorController.animationClips)
-        {
-            if (Animator.StringToHash(clip.name) == hash)
-            {
-                animationLength = clip.length;
-                return clip.length;
-            }
-        }
-
-        return -1f;
-    }
 
     public void ChangeAnimation(int animation, float crossfade = 0.2f, float time = 0)
     {
