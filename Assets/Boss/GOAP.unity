@@ -1060,7 +1060,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8022760809726979080, guid: 419365f2161ee494bb8e5a46f22860e1, type: 3}
       propertyPath: health
-      value: 20
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 8022760809726979080, guid: 419365f2161ee494bb8e5a46f22860e1, type: 3}
       propertyPath: Skill2Sensor
