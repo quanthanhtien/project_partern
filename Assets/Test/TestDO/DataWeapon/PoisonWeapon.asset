@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f25f57b0f7e7b974abce6383d2c7d0ed, type: 3}
+  m_Name: PoisonWeapon
+  m_EditorClassIdentifier: 
+  name: PoisonSpell
+  description: 
+  effectSkill: {fileID: 11400000, guid: dc2f7bc9efc6ada438e331e9e68ccefc, type: 2}
+  vfx: {fileID: 4735644616734473608, guid: 734e000b48c543348a9f913388b20750, type: 3}
+  icon: {fileID: 1834710680, guid: 3613989358a515b4dafe1954ad6ad40c, type: 3}
+  damage: 10
+  lifeTime: 5
+  coolDown: 12

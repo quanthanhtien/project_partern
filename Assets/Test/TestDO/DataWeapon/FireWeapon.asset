@@ -10,9 +10,14 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f25f57b0f7e7b974abce6383d2c7d0ed, type: 3}
-  m_Name: AbilityDataWeapon
+  m_Name: FireWeapon
   m_EditorClassIdentifier: 
   name: FireSpell
   description: 
   effectSkill: {fileID: 11400000, guid: 4c702dd5685863042904b0cc605cd230, type: 2}
+  area: {fileID: 8145597242578794022, guid: 9f536538617e75149a715ae99b33da01, type: 3}
+  vfx: {fileID: 8145597242578794022, guid: 9f536538617e75149a715ae99b33da01, type: 3}
   icon: {fileID: 1137561307, guid: 142aa6170bc3def4d8416c097c46b6cb, type: 3}
+  damage: 10
+  lifeTime: 2
+  coolDown: 12

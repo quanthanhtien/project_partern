@@ -7,7 +7,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: ChangeColor_mat 1
+  m_Name: ChangeColor_mat 2
   m_Shader: {fileID: 4800000, guid: 9abe56da41f7938448798dfa5a5c6aed, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
@@ -31,6 +31,6 @@ Material:
     m_Floats:
     - _Alpha: 1
     m_Colors:
-    - _Color: {r: 1, g: 0, b: 0, a: 1}
+    - _Color: {r: 1, g: 0, b: 0.9421816, a: 1}
   m_BuildTextureStacks: []
   m_AllowLocking: 1
