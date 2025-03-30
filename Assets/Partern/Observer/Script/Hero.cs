@@ -24,6 +24,11 @@ public class Hero : MonoBehaviour
         {
             Health.Value += 10;
         }
+
+        if (Input.GetKeyDown(KeyCode.A))
+        {
+            Health.Value -= 10;
+        }
     }
 
     [Button]
