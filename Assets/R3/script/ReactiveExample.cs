@@ -1,5 +1,6 @@
 using System;
 using System.Threading;
+using Cysharp.Threading.Tasks;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -14,7 +15,7 @@ namespace R3
         public Button coinButton;
         public ParticleSystem coinParticle;
         public Player player;
-        
+        public TMP_Text scoreText;
         
         IDisposable subscription;
         CancellationTokenSource cts;
@@ -36,13 +37,22 @@ namespace R3
             player.CurrentHp.Subscribe(x => Debug.Log($"HP: {x}") ).AddTo(this);
             player.IsDead.Where(isDead => isDead == true).Subscribe(_=>coinButton.enabled = false).AddTo(this);
             
-            subscription = coinButton.OnClickAsObservable().Subscribe(_ => 
+            coinButton.OnClickAsObservable().Subscribe(_ => 
             {
                 player.TakeDamage(99);
                 coinParticle.Play();
-            });
-        }
+            }).AddTo(this);
+            
+            subscription = Observable.Interval(TimeSpan.FromSeconds(1))
+                .Where(_=> !player.IsDead.Value)
+                .Subscribe(_ =>
+                {
+                    couterText.text = "Player Die";
+                });
 
+            player.playerScore.Subscribe(score => scoreText.text = score.ToString()).AddTo(this);
+        }
+        
         private void OnDestroy()
         {
             subscription?.Dispose();
