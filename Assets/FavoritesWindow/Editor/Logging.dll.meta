@@ -1,0 +1,41 @@
+fileFormatVersion: 2
+guid: 1a5f6de466a97d34c82cd237164e66b0
+timeCreated: 1531779482
+licenseType: Store
+PluginImporter:
+  serializedVersion: 2
+  iconMap: {}
+  executionOrder: {}
+  isPreloaded: 0
+  isOverridable: 0
+  platformData:
+    data:
+      first:
+        Any: 
+      second:
+        enabled: 0
+        settings: {}
+    data:
+      first:
+        Editor: Editor
+      second:
+        enabled: 1
+        settings:
+          DefaultValueInitialized: true
+    data:
+      first:
+        Windows Store Apps: WindowsStoreApps
+      second:
+        enabled: 0
+        settings:
+          CPU: AnyCPU
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 123487
+  packageName: Favorites Window
+  packageVersion: 1.1.9
+  assetPath: Assets/FavoritesWindow/Editor/Logging.dll
+  uploadId: 657779

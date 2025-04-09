@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: b56b490915022468bb7961d54e1d5713
+timeCreated: 1533986340
+licenseType: Store
+DefaultImporter:
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 123487
+  packageName: Favorites Window
+  packageVersion: 1.1.9
+  assetPath: Assets/FavoritesWindow/User Guide.pdf
+  uploadId: 657779
