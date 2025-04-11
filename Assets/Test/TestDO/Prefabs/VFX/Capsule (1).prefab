@@ -123,4 +123,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f083c9ed7acacf44498ee773973f045e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  AbilityDataWeapon: {fileID: 11400000, guid: bdf9b128942a8fc4b914615792ff71bc, type: 2}
+  DataWeapon: {fileID: 11400000, guid: bdf9b128942a8fc4b914615792ff71bc, type: 2}

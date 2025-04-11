@@ -3,12 +3,8 @@ using UnityEngine;
 
 namespace n4
 {
-    [CreateAssetMenu(
-        fileName = "AbilityDataWeapon",
-        menuName = "ScriptableObjects/AbilityData",
-        order = 1
-    )]
-    public class AbilityDataWeapon : ScriptableObject
+    [CreateAssetMenu(fileName = "DataWeapon", menuName = "DataWeapon/AbilityData", order = 1)]
+    public class DataWeapon : ScriptableObject
     {
         [VerticalGroup("row1/left")]
         public string name;

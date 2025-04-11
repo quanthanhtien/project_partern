@@ -5,7 +5,7 @@ namespace n4
 {
     public class Weapon : MonoBehaviour
     {
-        public AbilityDataWeapon abilityDataWeapon;
+        public DataWeapon DataWeapon;
         float damage;
         float lifeTime;
         float coolDown;
@@ -18,19 +18,15 @@ namespace n4
 
         void Init()
         {
-            damage = abilityDataWeapon.damage;
-            lifeTime = abilityDataWeapon.lifeTime;
-            coolDown = abilityDataWeapon.coolDown;
-            vfx = abilityDataWeapon.vfx;
+            damage = DataWeapon.damage;
+            lifeTime = DataWeapon.lifeTime;
+            coolDown = DataWeapon.coolDown;
+            vfx = DataWeapon.vfx;
         }
 
         private void OnTriggerEnter(Collider other)
         {
-            abilityDataWeapon.effectSkill.CashSpell(
-                other.transform.position,
-                vfx,
-                other.gameObject
-            );
+            DataWeapon.effectSkill.CashSpell(other.transform.position, vfx, other.gameObject);
             Destroy(this.gameObject);
         }
     }

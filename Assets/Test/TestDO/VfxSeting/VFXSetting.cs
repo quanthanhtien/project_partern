@@ -4,12 +4,12 @@ using UnityEngine;
 
 public class VFXSetting : MonoBehaviour
 {
-    public AbilityDataWeapon AbilityDataWeapon;
+    public DataWeapon DataWeapon;
     private CountdownTimer timer;
 
     public void Start()
     {
-        timer = new CountdownTimer(AbilityDataWeapon.lifeTime);
+        timer = new CountdownTimer(DataWeapon.lifeTime);
         timer.OnTimerStop += () => Destroy(gameObject);
         timer.Start();
         Debug.Log("VFXSetting OnEnable");
