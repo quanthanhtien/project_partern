@@ -1,0 +1,19 @@
+fileFormatVersion: 2
+guid: 5ed5ab008955b4e24aa1bc00b23058b3
+timeCreated: 1539397042
+licenseType: Store
+MonoImporter:
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 123487
+  packageName: Favorites Window
+  packageVersion: 1.1.9
+  assetPath: Assets/FavoritesWindow/Editor/AbstractFavoriteStorage.cs
+  uploadId: 657779

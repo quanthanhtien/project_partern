@@ -1,0 +1,19 @@
+fileFormatVersion: 2
+guid: d9b0fae2458da47c3a6808e36ec842e1
+timeCreated: 1531821086
+licenseType: Store
+MonoImporter:
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 123487
+  packageName: Favorites Window
+  packageVersion: 1.1.9
+  assetPath: Assets/FavoritesWindow/Editor/CreateWorkspacePopup.cs
+  uploadId: 657779
